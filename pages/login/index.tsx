@@ -7,7 +7,7 @@ import {login} from 'redux/login/login.slice'
 
 const Login = () => {
   const dispatch = useDispatch()
-  const {loading} = useSelector((state: any) => state.login)
+  const {loading} = useSelector((state) => state.login)
 
   const formik = useFormik<{email: string; password: string}>({
     initialValues: {email: '', password: ''},
