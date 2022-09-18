@@ -11,5 +11,5 @@ yarn
 ### Run
 
 ```bash
-yarn run dev
+yarn dev
 ```

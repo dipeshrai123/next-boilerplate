@@ -56,6 +56,7 @@ export const Tabs = React.forwardRef<TabsRef, TabsProps>(
           title: element.props.title,
           element
         })),
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       []
     )
 
@@ -86,6 +87,7 @@ export const Tabs = React.forwardRef<TabsRef, TabsProps>(
       const activeIndex = tabElements.findIndex((e) => e.id === activeId)
       tabWidth.value = tabsMeasurements.current[activeIndex].offsetWidth
       tabLeft.value = tabsMeasurements.current[activeIndex].offsetLeft
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeId])
 
     const tabsRef = useRef({setActiveId})

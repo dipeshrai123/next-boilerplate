@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Theme from 'src/theme'
+import Theme from 'theme'
 
 export const StyledMenuContainer = styled.div`
   background-color: #ffffff;

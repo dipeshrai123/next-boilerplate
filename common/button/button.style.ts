@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components'
 
-import Theme from 'src/theme'
+import Theme from 'theme'
 
 import {colors} from './constants'
 import {StyledButtonProps} from './button.type'

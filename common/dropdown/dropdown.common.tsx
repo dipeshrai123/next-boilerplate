@@ -91,13 +91,13 @@ export const Dropdown = ({
     } else {
       openDropdown()
     }
-  }, [dropdownActive])
+  }, [dropdownActive, openDropdown])
 
-  if (outDismiss) {
-    useOutsideClick(containerRef, () => {
+  useOutsideClick(containerRef, () => {
+    if (outDismiss) {
       closeDropdown()
-    })
-  }
+    }
+  })
 
   const containerStyles: React.CSSProperties = {
     position: 'relative',

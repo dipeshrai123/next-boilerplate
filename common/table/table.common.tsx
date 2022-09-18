@@ -1,21 +1,19 @@
-import {useCallback, useMemo, useRef} from 'react'
-import {useNavigation} from 'react-auth-navigation'
+import {useMemo, useRef} from 'react'
 import {
   TableContainer as MaterialTableContainer,
   Table as MaterialTable,
   TableBody as MaterialTableBody,
   TableHead as MaterialTableHead,
   TableRow as MaterialTableRow,
-  Paper as MaterialPaper,
-  Pagination as MaterialPagination
+  Paper as MaterialPaper
 } from '@mui/material'
 import {IoMdListBox} from 'react-icons/io'
 import {AiFillDelete} from 'react-icons/ai'
 import {MdEdit} from 'react-icons/md'
 
-import {HStack, VStack} from 'src/common/stack'
-import {Tooltip} from 'src/common/tooltip'
-import {Modal} from 'src/common/modal'
+import {HStack, VStack} from 'common/stack'
+import {Tooltip} from 'common/tooltip'
+import {Modal} from 'common/modal'
 
 import {ActionButton, StyledTableRow, StyledTableCell} from './table.style'
 import {Button} from '../button'
@@ -44,8 +42,6 @@ export const Table = <T, K extends Extract<keyof T, string>>({
     totalCount: number
   }
 }) => {
-  const {location, navigation} = useNavigation()
-  const {navigate} = navigation
   const actionsRef = useRef(actions)
   const hasActions = useMemo(() => {
     if (actionsRef.current) {
@@ -53,19 +49,6 @@ export const Table = <T, K extends Extract<keyof T, string>>({
     }
     return false
   }, [])
-
-  const searchParams = useMemo(
-    () => new URLSearchParams(location.search),
-    [location.search]
-  )
-  const page = searchParams.get('page')
-
-  const onChange = useCallback(
-    (newPageNumber: number) => {
-      navigate(location.pathname + `?page=${newPageNumber}`)
-    },
-    [location]
-  )
 
   return (
     <>
@@ -232,7 +215,7 @@ export const Table = <T, K extends Extract<keyof T, string>>({
         </MaterialTable>
       </MaterialTableContainer>
 
-      {!loading && data.length > 0 && pagination && pagination.totalCount ? (
+      {/* {!loading && data.length > 0 && pagination && pagination.totalCount ? (
         <div style={{width: '100%', display: 'flex'}}>
           <MaterialPagination
             style={{
@@ -253,7 +236,7 @@ export const Table = <T, K extends Extract<keyof T, string>>({
             }}
           />
         </div>
-      ) : null}
+      ) : null} */}
     </>
   )
 }

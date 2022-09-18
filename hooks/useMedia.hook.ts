@@ -22,7 +22,7 @@ export const useMedia = (): UseMediaReturn => {
 
 // MARK: - useGenericMedia
 const useGenericMedia = (query: string) => {
-  const [match, setMatch] = useState(() => window.matchMedia(query).matches)
+  const [match, setMatch] = useState(false)
 
   useEffect(() => {
     let mounted = true

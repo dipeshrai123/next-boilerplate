@@ -1,6 +1,6 @@
 import {createGlobalStyle} from 'styled-components'
 import chroma from 'chroma-js'
-import {config} from 'src/config'
+import {config} from 'config'
 
 const palette = {
   $white: '#fafafa',

@@ -1,7 +1,7 @@
 import {Children, CSSProperties} from 'react'
 
-import Theme from 'src/theme'
-import {useMedia} from 'src/hooks'
+import Theme from 'theme'
+import {useMedia} from 'hooks'
 
 interface StackProps {
   direction: 'vertical' | 'horizontal'

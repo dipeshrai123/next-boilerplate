@@ -1,4 +1,4 @@
-import {Dropdown, DropdownProps} from 'src/common/dropdown'
+import {Dropdown, DropdownProps} from 'common/dropdown'
 
 import {
   StyledMenuContainer,

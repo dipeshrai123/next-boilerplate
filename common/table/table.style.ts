@@ -6,7 +6,7 @@ import {
   tableCellClasses
 } from '@mui/material'
 
-import Theme from 'src/theme'
+import Theme from 'theme'
 
 export const StyledTableRow = materialStyled(TableRow)(({theme}) => ({
   '&:nth-of-type(odd)': {

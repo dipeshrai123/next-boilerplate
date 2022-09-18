@@ -1,10 +1,18 @@
-import '../styles/globals.css'
+import {Provider} from 'react-redux'
 import type {AppProps} from 'next/app'
 
-function MyApp({Component, pageProps}: AppProps) {
-  console.log(process.env.NEXT_PUBLIC_DEV_URL)
+import {store} from 'store'
+import {GlobalStyle} from 'theme'
 
-  return <Component {...pageProps} />
+import 'setUpTests'
+
+function MyApp({Component, pageProps}: AppProps) {
+  return (
+    <Provider store={store}>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </Provider>
+  )
 }
 
 export default MyApp

@@ -12,7 +12,7 @@ import {
   AnimationConfigUtils
 } from 'react-ui-animate'
 
-import {useDisableScroll} from 'src/hooks'
+import {useDisableScroll} from 'hooks'
 
 import {ModalContainer, ModalContent} from './modal.style'
 

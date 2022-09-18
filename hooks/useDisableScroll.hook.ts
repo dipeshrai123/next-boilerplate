@@ -1,7 +1,7 @@
-import * as React from 'react'
+import {useEffect} from 'react'
 
 export const useDisableScroll = (shouldDisable: boolean) => {
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.style.overflow = shouldDisable ? 'hidden' : 'auto'
   }, [shouldDisable])
 }

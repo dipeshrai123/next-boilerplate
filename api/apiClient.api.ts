@@ -1,6 +1,6 @@
 import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
 
-import {getCookie} from 'src/helpers'
+import {getCookie} from 'helpers'
 
 import {PathToResponse} from './pathToResponse.api'
 
