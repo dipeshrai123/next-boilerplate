@@ -1,5 +1,14 @@
+import {useEffect} from 'react'
+import {useRouter} from 'next/router'
+
 const Home = () => {
-  return <div>BOILERPLATE</div>
+  const {replace} = useRouter()
+
+  useEffect(() => {
+    replace('/login')
+  }, [replace])
+
+  return null
 }
 
 export default Home
