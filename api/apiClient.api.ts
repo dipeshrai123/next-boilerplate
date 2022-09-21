@@ -2,8 +2,6 @@ import axios, {AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios'
 
 import {getCookie} from 'helpers'
 
-import {PathToResponse} from './pathToResponse.api'
-
 // MARK: - instance
 const instance: AxiosInstance = axios.create({
   baseURL:
@@ -46,28 +44,24 @@ const getParsedUrl = (
   return url + urlString
 }
 
-// MARK: - getInstance
-const getInstance =
-  (method: 'GET' | 'DELETE' | 'HEAD' | 'OPTIONS' | 'POST' | 'PUT' | 'PATCH') =>
-  <TPath extends keyof PathToResponse>(
-    url: TPath,
-    params?: PathToResponse[TPath]['params'],
-    data?: PathToResponse[TPath]['body'],
+// MARK: api
+const api =
+  <
+    ApiResponse extends unknown,
+    ApiParams extends {[key: string]: number | string} = {},
+    ApiBody extends unknown = {}
+  >(
+    method: 'get' | 'delete' | 'head' | 'options' | 'post' | 'put' | 'patch'
+  ) =>
+  (
+    url: string,
+    params?: ApiParams,
+    data?: ApiBody,
     config?: Omit<
       AxiosRequestConfig<any>,
       'baseURL' | 'url' | 'method' | 'data'
     >
-  ): Promise<AxiosResponse<PathToResponse[TPath]['response']>> =>
+  ): Promise<AxiosResponse<ApiResponse>> =>
     instance({url: getParsedUrl(url, params), method, data, ...config})
-
-const api = {
-  get: getInstance('GET'),
-  delete: getInstance('DELETE'),
-  head: getInstance('HEAD'),
-  options: getInstance('OPTIONS'),
-  post: getInstance('POST'),
-  put: getInstance('PUT'),
-  patch: getInstance('PATCH')
-}
 
 export {instance, api}
