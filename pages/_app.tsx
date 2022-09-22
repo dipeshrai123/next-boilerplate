@@ -5,6 +5,7 @@ import {store} from 'store'
 import {GlobalStyle} from 'theme'
 
 import 'setUpTests'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function MyApp({Component, pageProps}: AppProps) {
   return (

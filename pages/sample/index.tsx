@@ -7,6 +7,7 @@ import {HStack, VStack, ResponsiveStack} from 'common/stack'
 import {Tabs, TabsPane, useTabsRef} from 'common/tabs'
 import {Tooltip} from 'common/tooltip'
 import {Table} from 'common/table'
+import {Skeleton} from 'common/skeleton'
 
 const Sample = () => {
   const {handler, toast} = useToast()
@@ -14,6 +15,9 @@ const Sample = () => {
 
   return (
     <>
+      <h2>Skeleton</h2>
+      <Skeleton width={100} height={100} />
+
       <h2>Table</h2>
       <TableComponent />
 
