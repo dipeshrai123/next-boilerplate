@@ -1,9 +1,9 @@
-import {Children, CSSProperties} from 'react'
+import {Children, CSSProperties, ComponentPropsWithoutRef} from 'react'
 
 import Theme from 'theme'
 import {useMedia} from 'hooks'
 
-interface StackProps {
+interface StackProps extends ComponentPropsWithoutRef<'div'> {
   direction: 'vertical' | 'horizontal'
   children?: any
   inline?: boolean
@@ -22,7 +22,8 @@ const Stack = ({
   style,
   justify = 'flex-start',
   align = 'stretch',
-  direction
+  direction,
+  ...restProps
 }: StackProps) => {
   return (
     <div
@@ -34,6 +35,7 @@ const Stack = ({
         justifyContent: justify,
         alignItems: align
       }}
+      {...restProps}
     >
       {Children.map(children, (child: React.ReactElement<any>, index) => (
         <>
